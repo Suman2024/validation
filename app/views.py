@@ -1,13 +1,14 @@
 from django.shortcuts import render
-from app.forms import *
 from django.http import HttpResponse
+from app.forms import *
 # Create your views here.
 
-def validate_forms(request):
-    sf=Studentform()
-    d={'form':sf}
+def validating(request):
+    SF=StudentForm()
+    d={'SF':SF}
+
     if request.method=='POST':
-        form_data=Studentform(request.POST)
-        if form_data.is_valid():
-            return HttpResponse(str(form_data.cleaned_data))
+        FD=StudentForm(request.POST)
+        if FD.is_valid():
+            return HttpResponse('valid form')
     return render(request,'validate_forms.html',d)

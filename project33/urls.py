@@ -18,5 +18,5 @@ from django.urls import path
 from app.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('validate_forms/',validate_forms,name='validate_forms'),
+    path('validate_forms/',validating,name='validate_forms'),
 ]
